@@ -1,0 +1,430 @@
+body {
+    background: linear-gradient(135deg, #faf8f8, #9eb6de);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    margin: auto;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.wrapper {
+    display: flex;
+    flex: 0  80vw;
+    margin: 0;
+    background: #efeaea;
+    box-shadow: 0 0 10px #000;
+}
+
+.side-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    background: linear-gradient(135deg, #d2cfce, #b5bac0);
+    padding: 5px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start
+
+}
+
+.side-bar-container img {
+    border-radius: 10px;
+}
+
+.side-bar{
+    margin: 10px;
+    padding: 0;
+    width: 350px;
+    height: 100%;
+}
+
+.side-bar a {
+    display: block;
+    color: black;
+    padding: 3px;
+    text-decoration: none;
+}
+
+pre code[class]:after {
+    content: 'Документ:' attr(class);
+    display: block; text-align: right;
+    font: 1em / 1.3em 'Lucida Console', 'courier new', monospace;
+    color: #646463;
+    padding-top: 0.5em;
+    text-shadow : 0px 1px 0px #000;
+}
+
+.side-bar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.side-bar a:hover:not(.active) {
+    background-color: #ec6161;
+    color: white;
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: auto;
+    width: 100%;
+    height: 230px;
+    box-shadow: inset 0 0 25px #000;
+    border-radius: 5px;
+}
+
+.footer img {
+    width: 500px;
+    height: 200px;
+    position: relative;
+}
+
+.contacts {
+    display: flex;
+}
+
+.main {
+    display: block;
+    /*flex-direction: column;*/
+    margin-left:10px;
+}
+/* скрываем чекбокс */
+#menu-toggle {
+    opacity: 0;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+}
+.menu-btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu-btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu-box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #CFD1D5FF;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+
+.menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: left;
+}
+
+.menu-item:hover {
+    background-color: #CFD8DC;
+}
+
+#menu-toggle:checked ~ .menu-btn > span {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu-toggle:checked ~ .menu-btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu-toggle:checked ~ .menu-box {
+    visibility: visible;
+    left: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 100%;
+        margin: 0;
+    }
+    .side-bar-container {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #d2cfce, #b5bac0);
+        padding: 5px;
+    }
+
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 768px;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        margin: auto;
+        width: 100%;
+    }
+
+
+    #menu-toggle {
+        opacity: 0;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    /* добавляем "гамбургер" */
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
+    .menu-btn > span::before {
+        content: '';
+        top: -8px;
+    }
+    .menu-btn > span::after {
+        content: '';
+        top: 8px;
+    }
+
+
+    .menu-box {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: center;
+        background-color: #CFD1D5FF;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+
+    .menu-item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: left;
+    }
+    .menu-item:hover {
+        background-color: #CFD8DC;
+    }
+    #menu-toggle:checked ~ .menu-btn > span {
+        transform: rotate(45deg);
+    }
+    #menu-toggle:checked ~ .menu-btn > span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+    #menu-toggle:checked ~ .menu-btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    #menu-toggle:checked ~ .menu-box {
+        visibility: visible;
+        left: 0;
+    }
+
+}
+@media screen and (max-width: 420px) {
+
+    .main-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 100%;
+        margin: 0;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left:10px;
+    }
+
+    footer{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        margin: auto;
+        width: 100%;
+
+    }
+
+    .footer img {
+        width: 320px;
+        height: 100px;
+        position: relative;
+
+    }
+
+    #menu-toggle {
+        opacity: 0;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
+    .menu-btn > span::before {
+        content: '';
+        top: -8px;
+    }
+    .menu-btn > span::after {
+        content: '';
+        top: 8px;
+    }
+
+
+    .menu-box {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: center;
+        background-color: #CFD1D5FF;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+
+    .menu-item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: left;
+    }
+    .menu-item:hover {
+        background-color: #CFD8DC;
+    }
+    #menu-toggle:checked ~ .menu-btn > span {
+        transform: rotate(45deg);
+    }
+    #menu-toggle:checked ~ .menu-btn > span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+    #menu-toggle:checked ~ .menu-btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    #menu-toggle:checked ~ .menu-box {
+        visibility: visible;
+        left: 0;
+    }
+}
