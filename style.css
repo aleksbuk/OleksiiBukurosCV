@@ -60,6 +60,9 @@ nav {
     padding: 0 40px;
 }
 
+.container {
+    margin: 5px;
+}
 .container li {
     margin: 6px 0;
 }
